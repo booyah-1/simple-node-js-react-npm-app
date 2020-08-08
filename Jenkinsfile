@@ -9,9 +9,10 @@ pipeline {
         CI = 'true'
     }
 	stages {
-		stage('Building project') {
+		stage('Building project********************') {
 			steps {
-				echo 'Doing npm install'
+				echo 'Doing npm install============'
+				sh 'npm install'
 			}
 		}
 	}
