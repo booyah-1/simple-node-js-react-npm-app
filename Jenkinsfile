@@ -11,8 +11,10 @@ pipeline {
 	stages {
 		stage('Building project********************') {
 			steps {
-				echo 'Set npm registry'
-				npm config set registry http://npm.paypal.com
+				echo 'Setting npm registry'
+				sh '''
+                  npm install --registry=http://npm.paypal.com
+				'''
 				echo 'Doing npm install============>>>>>>>>>>>>>>'
 				sh 'npm install' 
 			}
