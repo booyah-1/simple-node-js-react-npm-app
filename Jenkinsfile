@@ -9,9 +9,14 @@ pipeline {
         CI = 'true'
     }
 	stages {
+		stage('Cloning Git') {
+		  steps {
+			sh 'npm config ls'
+			git 'https://github.com/booyah-1/simple-node-js-react-npm-app'
+		  }
+		}
 		stage('Building project********************') {
 			steps {
-				sh 'npm config ls'
 				echo 'Setting npm registry'
 				sh '''
                   npm install --registry=http://npm.paypal.com
