@@ -7,15 +7,11 @@ pipeline {
     }
     environment {
         CI = 'true'
-		USER_CREDENTIALS = credentials('github-ssh')
     }
 	stages {
 		stage('Building project********************') {
 			steps {
 				echo 'Doing npm install============>>>>>>>>>>>>>>'
-				sh "echo $USER_CREDENTIALS_USR"
-                sh "echo $USER_CREDENTIALS_PSW"
-				
 				sh 'npm install' 
 			}
 		}
