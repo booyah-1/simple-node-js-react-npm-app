@@ -12,7 +12,7 @@ pipeline {
 		stage('Building project********************') {
 			steps {
 				echo 'Doing npm install============>>>>>>>>>>>>>>'
-				withCredentials([usernamePassword(credentialsId: env.GIT_CREDENTIAL_ID, usernameVariable: 'booyah-1', passwordVariable: 'muoiChin74')]) {
+				withCredentials([sshUserPrivateKey(credentialsId: '	github-ssh', keyFileVariable: 'CERT')]) {
                     sh 'npm install'
                 } 
 			}
